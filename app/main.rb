@@ -12,7 +12,7 @@ class Main < Sinatra::Base
   end
   
   get '/' do
-    slim :index
+    erb :index
   end
 
   get '/trello' do
