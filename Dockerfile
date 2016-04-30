@@ -12,10 +12,10 @@ RUN rm -f /etc/service/nginx/down
 RUN rm /etc/nginx/sites-enabled/default
 ADD app/config/webapp.conf /etc/nginx/sites-enabled/webapp.conf
 
-COPY app /home/app
-RUN chown -R app:app /home/app
-
 WORKDIR /tmp
 ADD app/Gemfile /tmp/
 ADD app/Gemfile.lock /tmp/
 RUN bundle install
+
+COPY app /home/app
+RUN chown -R app:app /home/app

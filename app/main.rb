@@ -33,25 +33,6 @@ class Main < Sinatra::Base
     when "info" 
       "Terminal interface for http://joshuacook.me  
       Email questions to me@joshuacook.me"  
-    when "login"
-      username = input[1]
-      if username == nil
-        "Error: no username specified
-        Please try 'login #username#'"
-      elsif redis.hexists(username, 'cwd') == false 
-        $logger.info("login:  #{username}")
-        redis.hset(username,'cwd','/')
-        redis.hset(username,'last',Time.now)
-        "Welcome, #{username}
-        Type 'help' for usage."
-      else 
-        $logger.info("login:  #{username}")
-        last = redis.hget(username,'last')
-        redis.hset(username,'last',Time.now)
-        "Welcome back, #{input[1]}
-        Haven't seen you since #{last}.
-        Type 'help' for usage."
-      end
     when "ls"
       home = Dir.glob('public/filesystem/*', File::FNM_DOTMATCH) - ['public/filesystem/.', 'public/filesystem/..']
       home.each do |s| 
