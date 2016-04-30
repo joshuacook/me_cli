@@ -1,0 +1,5 @@
+# Logfile created on 2015-11-17 01:03:38 -0500 by logger.rb/31641
+I, [2015-11-17T01:03:38.088096 #14533]  INFO -- : raw input:  ["help"]
+I, [2015-11-17T01:03:47.952451 #14530]  INFO -- : raw input:  ["ls"]
+I, [2015-11-17T01:03:59.095349 #14525]  INFO -- : raw input:  ["open", "thesis.pdf"]
+I, [2015-11-21T19:18:53.321291 #10140]  INFO -- : raw input:  ["ls"]

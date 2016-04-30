@@ -1,0 +1,21 @@
+require 'rake'
+
+desc "kill ALL unicorns"
+task :kill_unicorns do
+  `ps aux | grep 'unicorn' | awk '{print $2}' | xargs sudo kill -9`
+end
+
+desc "restart unicorn master"
+task :start_unicorns do
+  `unicorn -c config/unicorn.rb -D`
+end
+
+desc "copy nginx.conf"
+task :copy_nginx_conf do
+  `cp config/nginx.conf /etc/nginx/nginx.conf`
+end
+
+desc "start nginx"
+task :start_nginx do
+  `service nginx start`
+end

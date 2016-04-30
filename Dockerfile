@@ -1,16 +1,21 @@
-FROM debian
+FROM phusion/passenger-ruby22
 
 MAINTAINER Joshua Cook <me@joshuacook.me>
 
-ARG DEBIAN_FRONTEND=noninteractive
+ENV HOME /root
 
-RUN apt-get update && \
-  apt-get -y install \
-  software-properties-common
+CMD [ "/sbin/my_init" ]
 
-RUN apt-add-repository ppa:brightbox/ruby-ng && \
-  apt-get update && \
-  apt-get -y install \
-    ruby2.2 \
-    ruby2.2-dev \
-    build-essential
+EXPOSE 80
+
+RUN rm -f /etc/service/nginx/down
+RUN rm /etc/nginx/sites-enabled/default
+ADD app/config/webapp.conf /etc/nginx/sites-enabled/webapp.conf
+
+COPY app /home/app
+RUN chown -R app:app /home/app
+
+WORKDIR /tmp
+ADD app/Gemfile /tmp/
+ADD app/Gemfile.lock /tmp/
+RUN bundle install

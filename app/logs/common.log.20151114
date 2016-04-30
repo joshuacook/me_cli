@@ -1,0 +1,20 @@
+# Logfile created on 2015-11-11 00:15:18 -0500 by logger.rb/31641
+I, [2015-11-11T00:21:46.459521 #4876]  INFO -- : true
+I, [2015-11-11T00:51:46.185245 #9750]  INFO -- : redis:  herb
+I, [2015-11-11T00:57:38.713386 #12395]  INFO -- : redis:  bart
+I, [2015-11-11T01:05:07.752771 #12871]  INFO -- : redis:  blackbelt
+I, [2015-11-12T00:07:53.852190 #15459]  INFO -- : redis:  monkeybutt
+I, [2015-11-13T20:22:29.946008 #15456]  INFO -- : redis:  poo
+I, [2015-11-14T13:10:27.307046 #15451]  INFO -- : redis:  joshuacook
+I, [2015-11-14T23:36:59.488554 #11725]  INFO -- : raw input:  ["hi"]
+I, [2015-11-14T23:37:01.281633 #11731]  INFO -- : raw input:  ["cat"]
+I, [2015-11-14T23:37:02.950959 #11725]  INFO -- : raw input:  ["date"]
+I, [2015-11-14T23:37:26.405665 #11728]  INFO -- : raw input:  ["thank", "you,", "boys"]
+I, [2015-11-14T23:39:05.937555 #11814]  INFO -- : raw input:  ["cat", "thesis.pdf"]
+I, [2015-11-14T23:41:00.720605 #11904]  INFO -- : raw input:  ["login", "blackbeltjones"]
+I, [2015-11-14T23:41:00.721856 #11904]  INFO -- : redis:  blackbeltjones
+I, [2015-11-14T23:41:03.618961 #11896]  INFO -- : raw input:  ["help"]
+I, [2015-11-14T23:41:06.675784 #11904]  INFO -- : raw input:  ["date"]
+I, [2015-11-14T23:41:08.539074 #11901]  INFO -- : raw input:  ["info"]
+I, [2015-11-14T23:41:09.988806 #11898]  INFO -- : raw input:  ["ls"]
+I, [2015-11-14T23:41:12.652371 #11904]  INFO -- : raw input:  ["random"]
