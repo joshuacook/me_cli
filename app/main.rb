@@ -10,7 +10,7 @@ class Main < Sinatra::Base
     Dir.mkdir('logs') unless File.exist?('logs')
     $logger = Logger.new('logs/common.log','weekly')
   end
-  
+
   get '/' do
     erb :index
   end
@@ -19,32 +19,32 @@ class Main < Sinatra::Base
     slim :trello
   end
 
-  post '/server' do 
+  post '/server' do
     request.body.rewind
     input = request.body.read.split(' ')
     $logger.info("raw input:  #{input}")
     case input[0]
     # when "cat"
-    #  File.read(File.join('public/filesystem', input[1]))  
-    when "date" 
+    #  File.read(File.join('public/filesystem', input[1]))
+    when "date"
       "#{Time.now}"
     when "help"
       "Try one of these commands: date, info, ls, open, random"
-    when "info" 
-      "Terminal interface for http://joshuacook.me  
-      Email questions to me@joshuacook.me"  
+    when "info"
+      "Terminal interface for http://joshuacook.me
+      Email questions to me@joshuacook.me"
     when "ls"
       home = Dir.glob('public/filesystem/*', File::FNM_DOTMATCH) - ['public/filesystem/.', 'public/filesystem/..']
-      home.each do |s| 
+      home.each do |s|
         s.gsub!('public/filesystem/','')
       end
-      home.sort.join(' ')
+      home.sort.join('\n')
     when "open"
       "<script>window.location.href = '/filesystem/#{input[1]}';</script>"
     when "random"
       "#{rand()}"
     else
-      "error #{input}" 
+      "error #{input}"
     end
   end
 end
