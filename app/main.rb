@@ -38,7 +38,7 @@ class Main < Sinatra::Base
       home.each do |s|
         s.gsub!('public/filesystem/','')
       end
-      home.sort.join('\n')
+      home.sort.join('<br>')
     when "open"
       "<script>window.location.href = '/filesystem/#{input[1]}';</script>"
     when "random"
