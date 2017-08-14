@@ -75,7 +75,8 @@ div.footer {
   margin: 0 auto;
   text-align:left; 
   font-family: sans-serif; 
-  width: 100%
+  width: 100%;
+  color: rgb(185, 185, 185)
 }
 
 div.small {
